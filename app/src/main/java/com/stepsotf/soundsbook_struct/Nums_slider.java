@@ -80,4 +80,18 @@ public class Nums_slider extends FragmentActivity {
             return NUM_PAGES;
         }
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        //SaveAll();
+        BackgroundSoundService.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //SaveAll();
+        BackgroundSoundService.start(this, R.raw.wordapp);
+    }
 }

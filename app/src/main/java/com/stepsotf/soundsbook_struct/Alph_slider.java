@@ -3,6 +3,7 @@ package com.stepsotf.soundsbook_struct;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v13.app.FragmentStatePagerAdapter;
@@ -51,6 +52,7 @@ public class Alph_slider extends FragmentActivity {
         findViewById(R.id.alph_s_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                (MediaPlayer.create(Alph_slider.this,R.raw.click)).start();
                 Intent go_back_act = new Intent(Alph_slider.this,Menu.class);
                 startActivity(go_back_act);
                 finish();
@@ -76,5 +78,19 @@ public class Alph_slider extends FragmentActivity {
             return NUM_PAGES;
         }
 
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        //SaveAll();
+        BackgroundSoundService.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //SaveAll();
+        BackgroundSoundService.start(this, R.raw.wordapp);
     }
 }
