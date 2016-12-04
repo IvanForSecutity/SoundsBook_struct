@@ -20,7 +20,7 @@ import android.view.View;
 import static com.stepsotf.soundsbook_struct.MainActivity.uiOptions;
 
 public class Alph_slider extends FragmentActivity {
-    private static final int NUM_PAGES = 6;
+    private static final int NUM_PAGES = 5;
     ViewPager mPager;//view type
 
     PagerAdapter mPagerAdapter;

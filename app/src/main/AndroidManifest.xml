@@ -48,6 +48,9 @@
             android:name=".Alph_active"
             android:screenOrientation="landscape" />
         <activity
+            android:name=".Nums_active"
+            android:screenOrientation="landscape" />
+        <activity
             android:name=".Next_Lvl_Stub"
             android:screenOrientation="landscape" />
     </application>

@@ -1,6 +1,9 @@
 package com.stepsotf.soundsbook_struct;
 
 import android.app.Fragment;
+import android.content.Context;
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +16,7 @@ import android.widget.ImageButton;
  */
 
 public class Nums_slider_fragment extends Fragment {
+    Context ctx;
 
     /**
      * The argument key for the page number this fragment represents.
@@ -51,6 +55,7 @@ public class Nums_slider_fragment extends Fragment {
         // Inflate the layout containing a title and body text.
         ViewGroup rootView = (ViewGroup) inflater
                 .inflate(R.layout.activity_slider_fragment, container, false);
+        ctx = getActivity();
 
         setButtons(mPageNumber,rootView);
         return rootView;
@@ -62,26 +67,45 @@ public class Nums_slider_fragment extends Fragment {
     public int getPageNumber() {
         return mPageNumber;
     }
+    void SOCL(final int number, View V, int v)//SetOnClickListener
+    {
+        V.findViewById(v).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                (MediaPlayer.create(getActivity(), R.raw.click)).start();
+                startActivity(new Intent(ctx, Nums_active.class).putExtra("lvl_nums", number ));
+            }
+        });
+    }
     void setButtons(int number,View v)
     {
         switch(number)
         {
             case 0:
-                ((ImageButton)v.findViewById(R.id.button1_1)).setImageResource(R.drawable.num0);
-                ((ImageButton)v.findViewById(R.id.button1_2)).setImageResource(R.drawable.num1);
-                ((ImageButton)v.findViewById(R.id.button1_3)).setImageResource(R.drawable.num2);
-                ((ImageButton)v.findViewById(R.id.button2_1)).setImageResource(R.drawable.num3);
-                ((ImageButton)v.findViewById(R.id.button2_2)).setImageResource(R.drawable.num4);
-                ((ImageButton)v.findViewById(R.id.button2_3)).setImageResource(R.drawable.num5);
+                ((ImageButton) v.findViewById(R.id.button1_1)).setImageResource(R.drawable.num1);
+                SOCL(1, v, R.id.button1_1);
+                ((ImageButton) v.findViewById(R.id.button1_2)).setImageResource(R.drawable.num2);
+                SOCL(2, v, R.id.button1_2);
+                ((ImageButton) v.findViewById(R.id.button1_3)).setImageResource(R.drawable.num3);
+                SOCL(3, v, R.id.button1_3);
+                ((ImageButton) v.findViewById(R.id.button2_1)).setImageResource(R.drawable.num4);
+                SOCL(4, v, R.id.button2_1);
+                ((ImageButton) v.findViewById(R.id.button2_2)).setImageResource(R.drawable.num5);
+                SOCL(5, v, R.id.button2_2);
+                ((ImageButton) v.findViewById(R.id.button2_3)).setImageResource(R.drawable.num6);
+                SOCL(6, v, R.id.button2_3);
                 break;
             case 1:
 
-                ((ImageButton)v.findViewById(R.id.button1_1)).setImageResource(R.drawable.num6);
-                ((ImageButton)v.findViewById(R.id.button1_2)).setImageResource(R.drawable.num7);
-                ((ImageButton)v.findViewById(R.id.button1_3)).setImageResource(R.drawable.num8);
-                ((ImageButton)v.findViewById(R.id.button2_1)).setImageResource(R.drawable.num9);
-                ((ImageButton)v.findViewById(R.id.button2_2)).setVisibility(View.INVISIBLE);
-                ((ImageButton)v.findViewById(R.id.button2_3)).setVisibility(View.INVISIBLE);
+                ((ImageButton)v.findViewById(R.id.button1_1)).setImageResource(R.drawable.num7);
+                SOCL(7, v, R.id.button1_1);
+                ((ImageButton)v.findViewById(R.id.button1_2)).setImageResource(R.drawable.num8);
+                SOCL(8, v, R.id.button1_2);
+                ((ImageButton)v.findViewById(R.id.button1_3)).setImageResource(R.drawable.num9);
+                SOCL(9, v, R.id.button1_3);
+                (v.findViewById(R.id.button2_1)).setVisibility(View.INVISIBLE);
+                (v.findViewById(R.id.button2_2)).setVisibility(View.INVISIBLE);
+                (v.findViewById(R.id.button2_3)).setVisibility(View.INVISIBLE);
                 break;
         }
     }

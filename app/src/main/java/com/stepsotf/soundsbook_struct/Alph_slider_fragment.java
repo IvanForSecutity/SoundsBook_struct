@@ -63,15 +63,15 @@ public class Alph_slider_fragment extends Fragment {
         return mPageNumber;
     }
 
-    void SOCL(final int number,View V,int v)//SetOnClickListener
+    void SOCL(final int number, View V, int v)//SetOnClickListener
     {
         V.findViewById(v).setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            (MediaPlayer.create(getActivity(),R.raw.click)).start();
-            startActivity(new Intent(ctx,Alph_active.class).putExtra("lvl",number+1));
-        }
-    });
+            @Override
+            public void onClick(View view) {
+                (MediaPlayer.create(getActivity(), R.raw.click)).start();
+                startActivity(new Intent(ctx, Alph_active.class).putExtra("lvl", number ));
+            }
+        });
     }
     void SetButtons(int number, View v)
     {
@@ -79,86 +79,86 @@ public class Alph_slider_fragment extends Fragment {
         {
             case 0:
                 ((ImageButton)v.findViewById(R.id.button1_1)).setImageResource(R.drawable.letter1);
-                SOCL(number,v,R.id.button1_1);
+                SOCL(1,v,R.id.button1_1);
                 ((ImageButton)v.findViewById(R.id.button1_2)).setImageResource(R.drawable.letter2);
-                SOCL(number,v,R.id.button1_2);
+                SOCL(2,v,R.id.button1_2);
                 ((ImageButton)v.findViewById(R.id.button1_3)).setImageResource(R.drawable.letter3);
-                SOCL(number,v,R.id.button1_3);
+                SOCL(3,v,R.id.button1_3);
                 ((ImageButton)v.findViewById(R.id.button2_1)).setImageResource(R.drawable.letter4);
-                SOCL(number,v,R.id.button2_1);
+                SOCL(4,v,R.id.button2_1);
                 ((ImageButton)v.findViewById(R.id.button2_2)).setImageResource(R.drawable.letter5);
-                SOCL(number,v,R.id.button2_2);
+                SOCL(5,v,R.id.button2_2);
                 ((ImageButton)v.findViewById(R.id.button2_3)).setImageResource(R.drawable.letter6);
-                SOCL(number,v,R.id.button2_3);
+                SOCL(6,v,R.id.button2_3);
                 break;
             case 1:
 
                 ((ImageButton)v.findViewById(R.id.button1_1)).setImageResource(R.drawable.letter7);
-                SOCL(number,v,R.id.button1_1);
+                SOCL(7,v,R.id.button1_1);
                 ((ImageButton)v.findViewById(R.id.button1_2)).setImageResource(R.drawable.letter8);
-                SOCL(number,v,R.id.button1_2);
+                SOCL(8,v,R.id.button1_2);
                 ((ImageButton)v.findViewById(R.id.button1_3)).setImageResource(R.drawable.letter9);
-                SOCL(number,v,R.id.button1_3);
+                SOCL(9,v,R.id.button1_3);
                 ((ImageButton)v.findViewById(R.id.button2_1)).setImageResource(R.drawable.letter10);
-                SOCL(number,v,R.id.button2_1);
+                SOCL(10,v,R.id.button2_1);
                 ((ImageButton)v.findViewById(R.id.button2_2)).setImageResource(R.drawable.letter11);
-                SOCL(number,v,R.id.button2_2);
+                SOCL(11,v,R.id.button2_2);
                 ((ImageButton)v.findViewById(R.id.button2_3)).setImageResource(R.drawable.letter12);
-                SOCL(number,v,R.id.button2_3);
+                SOCL(12,v,R.id.button2_3);
                 break;
             case 2:
                 ((ImageButton)v.findViewById(R.id.button1_1)).setImageResource(R.drawable.letter13);
-                SOCL(number,v,R.id.button1_1);
+                SOCL(13,v,R.id.button1_1);
                 ((ImageButton)v.findViewById(R.id.button1_2)).setImageResource(R.drawable.letter14);
-                SOCL(number,v,R.id.button1_2);
+                SOCL(14,v,R.id.button1_2);
                 ((ImageButton)v.findViewById(R.id.button1_3)).setImageResource(R.drawable.letter15);
-                SOCL(number,v,R.id.button1_3);
+                SOCL(15,v,R.id.button1_3);
                 ((ImageButton)v.findViewById(R.id.button2_1)).setImageResource(R.drawable.letter16);
-                SOCL(number,v,R.id.button2_2);
+                SOCL(16,v,R.id.button2_2);
                 ((ImageButton)v.findViewById(R.id.button2_2)).setImageResource(R.drawable.letter17);
-                SOCL(number,v,R.id.button2_2);
+                SOCL(17,v,R.id.button2_2);
                 ((ImageButton)v.findViewById(R.id.button2_3)).setImageResource(R.drawable.letter18);
-                SOCL(number,v,R.id.button2_3);
+                SOCL(18,v,R.id.button2_3);
                 break;
             case 3:
                 ((ImageButton)v.findViewById(R.id.button1_1)).setImageResource(R.drawable.letter19);
-                SOCL(number,v,R.id.button1_1);
+                SOCL(19,v,R.id.button1_1);
                 ((ImageButton)v.findViewById(R.id.button1_2)).setImageResource(R.drawable.letter20);
-                SOCL(number,v,R.id.button1_2);
+                SOCL(20,v,R.id.button1_2);
                 ((ImageButton)v.findViewById(R.id.button1_3)).setImageResource(R.drawable.letter21);
-                SOCL(number,v,R.id.button1_3);
+                SOCL(21,v,R.id.button1_3);
                 ((ImageButton)v.findViewById(R.id.button2_1)).setImageResource(R.drawable.letter22);
-                SOCL(number,v,R.id.button2_1);
+                SOCL(22,v,R.id.button2_1);
                 ((ImageButton)v.findViewById(R.id.button2_2)).setImageResource(R.drawable.letter23);
-                SOCL(number,v,R.id.button2_2);
+                SOCL(23,v,R.id.button2_2);
                 ((ImageButton)v.findViewById(R.id.button2_3)).setImageResource(R.drawable.letter24);
-                SOCL(number,v,R.id.button2_3);
+                SOCL(24,v,R.id.button2_3);
                 break;
             case 4:
                 ((ImageButton)v.findViewById(R.id.button1_1)).setImageResource(R.drawable.letter25);
-                SOCL(number,v,R.id.button1_1);
+                SOCL(25,v,R.id.button1_1);
                 ((ImageButton)v.findViewById(R.id.button1_2)).setImageResource(R.drawable.letter26);
-                SOCL(number,v,R.id.button1_2);
+                SOCL(26,v,R.id.button1_2);
                 ((ImageButton)v.findViewById(R.id.button1_3)).setImageResource(R.drawable.letter27);
-                SOCL(number,v,R.id.button1_3);
-                ((ImageButton)v.findViewById(R.id.button2_1)).setImageResource(R.drawable.letter28);
-                SOCL(number,v,R.id.button2_1);
-                ((ImageButton)v.findViewById(R.id.button2_2)).setImageResource(R.drawable.letter29);
-                SOCL(number,v,R.id.button2_2);
-                ((ImageButton)v.findViewById(R.id.button2_3)).setImageResource(R.drawable.letter30);
-                SOCL(number,v,R.id.button2_3);
+                SOCL(27,v,R.id.button1_3);
+                ((ImageButton)v.findViewById(R.id.button2_1)).setImageResource(R.drawable.letter31);
+                SOCL(28,v,R.id.button2_1);
+                ((ImageButton)v.findViewById(R.id.button2_2)).setImageResource(R.drawable.letter32);
+                SOCL(29,v,R.id.button2_2);
+                ((ImageButton)v.findViewById(R.id.button2_3)).setImageResource(R.drawable.letter33);
+                SOCL(30,v,R.id.button2_3);
                 break;
-            case 5:
-                ((ImageButton)v.findViewById(R.id.button1_1)).setImageResource(R.drawable.letter31);
-                SOCL(number,v,R.id.button1_1);
+           /* case 5:
+                ((ImageButton)v.findViewById(R.id.button1_1)).setImageResource(R.drawable.letter33);
+                SOCL(31,v,R.id.button1_1);
                 ((ImageButton)v.findViewById(R.id.button1_2)).setImageResource(R.drawable.letter32);
-                SOCL(number,v,R.id.button1_2);
+                SOCL(32,v,R.id.button1_2);
                 ((ImageButton)v.findViewById(R.id.button1_3)).setImageResource(R.drawable.letter33);
-                SOCL(number,v,R.id.button1_3);
+                SOCL(33,v,R.id.button1_3);
                 (v.findViewById(R.id.button2_1)).setVisibility(View.INVISIBLE);
                 (v.findViewById(R.id.button2_2)).setVisibility(View.INVISIBLE);
                 (v.findViewById(R.id.button2_3)).setVisibility(View.INVISIBLE);
-                break;
+                break;*/
 
         }
     }
