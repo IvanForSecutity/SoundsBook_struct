@@ -22,7 +22,7 @@ public class Menu extends Activity {
         Log.d("some","alph");
         Intent alph_intent = new Intent(Menu.this,Alph_slider.class);
         startActivity(alph_intent);
-        finish();
+       // finish();
         }
     public void goto_read(View view)
     {
@@ -40,7 +40,7 @@ public class Menu extends Activity {
         Log.d("some","count");
         Intent nums_intent = new Intent(Menu.this,Nums_slider.class);
         startActivity(nums_intent);
-        finish();
+        //finish();
     }
 
     @Override

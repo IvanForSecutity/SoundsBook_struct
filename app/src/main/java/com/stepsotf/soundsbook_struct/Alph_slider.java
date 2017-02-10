@@ -32,7 +32,6 @@ public class Alph_slider extends FragmentActivity {
         mPager = (ViewPager) findViewById(R.id.sl_pager);
         getWindow().getDecorView().setSystemUiVisibility(uiOptions);//in import
         findViewById(R.id.alph_s_prev).setPressed(true);
-        findViewById(R.id.alph_s_prev).setPressed(true);
 
 
         mPagerAdapter = new ScreenSlidePagerAdapter(getFragmentManager());//создание адаптера для фрагмента
@@ -42,6 +41,7 @@ public class Alph_slider extends FragmentActivity {
         mPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
+                Log.d("SLIDER","POS="+position);
                 if(position==0)findViewById(R.id.alph_s_prev).setPressed(true);
                 if(position==1)findViewById(R.id.alph_s_prev).setPressed(false);
                 if(position==NUM_PAGES-1)findViewById(R.id.alph_s_next).setPressed(true);
@@ -52,9 +52,9 @@ public class Alph_slider extends FragmentActivity {
         findViewById(R.id.alph_s_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                (MediaPlayer.create(Alph_slider.this,R.raw.click)).start();
+                /*(MediaPlayer.create(Alph_slider.this,R.raw.click)).start();
                 Intent go_back_act = new Intent(Alph_slider.this,Menu.class);
-                startActivity(go_back_act);
+                startActivity(go_back_act);*/
                 finish();
             }
         });
@@ -91,6 +91,7 @@ public class Alph_slider extends FragmentActivity {
     protected void onResume() {
         super.onResume();
         //SaveAll();
+        Log.d("SLIDER","resume");
         BackgroundSoundService.start(this, R.raw.wordapp);
     }
 }

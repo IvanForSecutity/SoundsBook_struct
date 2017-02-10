@@ -45,6 +45,12 @@ public class Alph_active extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alph_active);
         getWindow().getDecorView().setSystemUiVisibility(uiOptions);
+        findViewById(R.id.alph_a_back).setOnClickListener(new View.OnClickListener() {//go to slider when press back
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         res =this.getResources();
         BackgroundSoundService.pause();
         ALP_LVL_NUM = getIntent().getIntExtra("lvl",1);
@@ -164,6 +170,7 @@ public class Alph_active extends Activity {
             }
         }).start();
     }
+
 
 
     //-------------------------------------------------------------------------------------------------------------------------
@@ -489,10 +496,12 @@ public class Alph_active extends Activity {
     }
     public void GoNextLvl(View view)//its for button on xml
     {
-        (MediaPlayer.create(Alph_active.this,R.raw.click)).start();
-        Log.d("ass","as");
-        startActivity(new Intent(Alph_active.this,Alph_active.class).putExtra("lvl",ALP_LVL_NUM+1));
-        finish();
+        if(ALP_LVL_NUM>Alphabeth.length-2)finish();
+        else {
+            (MediaPlayer.create(Alph_active.this, R.raw.click)).start();
+            finish();
+            startActivity(new Intent(Alph_active.this, Alph_active.class).putExtra("lvl", ALP_LVL_NUM + 1));
+        }
     }
     int GetPicture(int part_num)//return drawable of the part of current picture
     {
@@ -537,82 +546,86 @@ public class Alph_active extends Activity {
         vid[9][1]=R.drawable.igla2;
         vid[9][2]=R.drawable.igla3;
         vid[9][3]=R.drawable.kit1;
-        vid[10][0]=R.drawable.kit1;
-        vid[10][1]=R.drawable.kit2;
-        vid[10][2]=R.drawable.kit3;
-        vid[10][3]=R.drawable.lozhka2;
-        vid[11][0]=R.drawable.lozhka1;
-        vid[11][1]=R.drawable.lozhka2;
-        vid[11][2]=R.drawable.lozhka3;
-        vid[11][3]=R.drawable.miach3;
-        vid[12][0]=R.drawable.miach1;
-        vid[12][1]=R.drawable.miach2;
-        vid[12][2]=R.drawable.miach3;
-        vid[12][3]=R.drawable.nosorog1;
-        vid[13][0]=R.drawable.nosorog1;
-        vid[13][1]=R.drawable.nosorog2;
-        vid[13][2]=R.drawable.nosorog3;
-        vid[13][3]=R.drawable.ochki2;
-        vid[14][0]=R.drawable.ochki1;
-        vid[14][1]=R.drawable.ochki2;
-        vid[14][2]=R.drawable.ochki3;
-        vid[14][3]=R.drawable.pugovica3;
-        vid[15][0]=R.drawable.pugovica1;
-        vid[15][1]=R.drawable.pugovica2;
-        vid[15][2]=R.drawable.pugovica3;
-        vid[15][3]=R.drawable.rak1;
-        vid[16][0]=R.drawable.rak1;
-        vid[16][1]=R.drawable.rak2;
-        vid[16][2]=R.drawable.rak3;
-        vid[16][3]=R.drawable.samolet2;
-        vid[17][0]=R.drawable.samolet1;
-        vid[17][1]=R.drawable.samolet2;
-        vid[17][2]=R.drawable.samolet3;
-        vid[17][3]=R.drawable.tarelka3;
-        vid[18][0]=R.drawable.tarelka1;
-        vid[18][1]=R.drawable.tarelka2;
-        vid[18][2]=R.drawable.tarelka3;
-        vid[18][3]=R.drawable.utka1;
-        vid[19][0]=R.drawable.utka1;
-        vid[19][1]=R.drawable.utka2;
-        vid[19][2]=R.drawable.utka3;
+        vid[10][0]=R.drawable.iod1;
+        vid[10][1]=R.drawable.iod2;
+        vid[10][2]=R.drawable.iod3;
+        vid[10][3]=R.drawable.el3;
+        vid[11][0]=R.drawable.kit1;
+        vid[11][1]=R.drawable.kit2;
+        vid[11][2]=R.drawable.kit3;
+        vid[11][3]=R.drawable.lozhka2;
+        vid[12][0]=R.drawable.lozhka1;
+        vid[12][1]=R.drawable.lozhka2;
+        vid[12][2]=R.drawable.lozhka3;
+        vid[12][3]=R.drawable.miach3;
+        vid[13][0]=R.drawable.miach1;
+        vid[13][1]=R.drawable.miach2;
+        vid[13][2]=R.drawable.miach3;
+        vid[13][3]=R.drawable.nosorog1;
+        vid[14][0]=R.drawable.nosorog1;
+        vid[14][1]=R.drawable.nosorog2;
+        vid[14][2]=R.drawable.nosorog3;
+        vid[14][3]=R.drawable.ochki2;
+        vid[15][0]=R.drawable.ochki1;
+        vid[15][1]=R.drawable.ochki2;
+        vid[15][2]=R.drawable.ochki3;
+        vid[15][3]=R.drawable.pugovica3;
+        vid[16][0]=R.drawable.pugovica1;
+        vid[16][1]=R.drawable.pugovica2;
+        vid[16][2]=R.drawable.pugovica3;
+        vid[16][3]=R.drawable.rak1;
+        vid[17][0]=R.drawable.rak1;
+        vid[17][1]=R.drawable.rak2;
+        vid[17][2]=R.drawable.rak3;
+        vid[17][3]=R.drawable.samolet2;
+        vid[18][0]=R.drawable.samolet1;
+        vid[18][1]=R.drawable.samolet2;
+        vid[18][2]=R.drawable.samolet3;
+        vid[18][3]=R.drawable.tarelka3;
+        vid[19][0]=R.drawable.tarelka1;
+        vid[19][1]=R.drawable.tarelka2;
+        vid[19][2]=R.drawable.tarelka3;
+        vid[19][3]=R.drawable.utka1;
+        vid[20][0]=R.drawable.utka1;
+        vid[20][1]=R.drawable.utka2;
+        vid[20][2]=R.drawable.utka3;
         vid[29][3]=R.drawable.fonar2;
-        vid[20][0]=R.drawable.fonar1;
-        vid[20][1]=R.drawable.fonar2;
-        vid[20][2]=R.drawable.fonar3;
-        vid[20][3]=R.drawable.halat3;
-        vid[21][0]=R.drawable.halat1;
-        vid[21][1]=R.drawable.halat2;
-        vid[21][2]=R.drawable.halat3;
-        vid[21][3]=R.drawable.caplia1;
-        vid[22][0]=R.drawable.caplia1;
-        vid[22][1]=R.drawable.caplia2;
-        vid[22][2]=R.drawable.caplia3;
-        vid[22][3]=R.drawable.chashka2;
-        vid[23][0]=R.drawable.chashka1;
-        vid[23][1]=R.drawable.chashka2;
-        vid[23][2]=R.drawable.chashka3;
-        vid[23][3]=R.drawable.shapka3;
-        vid[24][0]=R.drawable.shapka1;
-        vid[24][1]=R.drawable.shapka2;
-        vid[24][2]=R.drawable.shapka3;
-        vid[24][3]=R.drawable.shuka1;
-        vid[25][0]=R.drawable.shuka1;
-        vid[25][1]=R.drawable.shuka2;
-        vid[25][2]=R.drawable.shuka3;
-        vid[25][3]=R.drawable.eskimo2;
-        vid[26][0]=R.drawable.eskimo1;
-        vid[26][1]=R.drawable.eskimo2;
-        vid[26][2]=R.drawable.eskimo3;
-        vid[26][3]=R.drawable.iug3;
-        vid[27][0]=R.drawable.iug1;
-        vid[27][1]=R.drawable.iug2;
-        vid[27][2]=R.drawable.iug3;
-        vid[27][3]=R.drawable.yabloko1;
-        vid[28][0]=R.drawable.yabloko1;
-        vid[28][1]=R.drawable.yabloko2;
-        vid[28][2]=R.drawable.yabloko3;
-        vid[28][3]=R.drawable.arbuz3;
+        vid[21][0]=R.drawable.fonar1;
+        vid[21][1]=R.drawable.fonar2;
+        vid[21][2]=R.drawable.fonar3;
+        vid[21][3]=R.drawable.halat3;
+        vid[22][0]=R.drawable.halat1;
+        vid[22][1]=R.drawable.halat2;
+        vid[22][2]=R.drawable.halat3;
+        vid[22][3]=R.drawable.caplia1;
+        vid[23][0]=R.drawable.caplia1;
+        vid[23][1]=R.drawable.caplia2;
+        vid[23][2]=R.drawable.caplia3;
+        vid[23][3]=R.drawable.chashka2;
+        vid[24][0]=R.drawable.chashka1;
+        vid[24][1]=R.drawable.chashka2;
+        vid[24][2]=R.drawable.chashka3;
+        vid[24][3]=R.drawable.shapka3;
+        vid[25][0]=R.drawable.shapka1;
+        vid[25][1]=R.drawable.shapka2;
+        vid[25][2]=R.drawable.shapka3;
+        vid[25][3]=R.drawable.shuka1;
+        vid[26][0]=R.drawable.shuka1;
+        vid[26][1]=R.drawable.shuka2;
+        vid[26][2]=R.drawable.shuka3;
+        vid[26][3]=R.drawable.eskimo2;
+        vid[27][0]=R.drawable.eskimo1;
+        vid[27][1]=R.drawable.eskimo2;
+        vid[27][2]=R.drawable.eskimo3;
+        vid[27][3]=R.drawable.iug3;
+        vid[28][0]=R.drawable.iug1;
+        vid[28][1]=R.drawable.iug2;
+        vid[28][2]=R.drawable.iug3;
+        vid[28][3]=R.drawable.yabloko1;
+        vid[29][0]=R.drawable.yabloko1;
+        vid[29][1]=R.drawable.yabloko2;
+        vid[29][2]=R.drawable.yabloko3;
+        vid[29][3]=R.drawable.arbuz3;
         return vid[ALP_LVL_NUM-1][part_num];
     }
 

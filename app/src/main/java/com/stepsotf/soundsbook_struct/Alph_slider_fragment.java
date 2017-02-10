@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 
 
@@ -72,6 +74,8 @@ public class Alph_slider_fragment extends Fragment {
                 startActivity(new Intent(ctx, Alph_active.class).putExtra("lvl", number ));
             }
         });
+        V.findViewById(v).startAnimation(AnimationUtils.loadAnimation(getActivity(),
+                R.anim.dzhiga_driga));
     }
     void SetButtons(int number, View v)
     {
@@ -114,7 +118,7 @@ public class Alph_slider_fragment extends Fragment {
                 ((ImageButton)v.findViewById(R.id.button1_3)).setImageResource(R.drawable.letter15);
                 SOCL(15,v,R.id.button1_3);
                 ((ImageButton)v.findViewById(R.id.button2_1)).setImageResource(R.drawable.letter16);
-                SOCL(16,v,R.id.button2_2);
+                SOCL(16,v,R.id.button2_1);
                 ((ImageButton)v.findViewById(R.id.button2_2)).setImageResource(R.drawable.letter17);
                 SOCL(17,v,R.id.button2_2);
                 ((ImageButton)v.findViewById(R.id.button2_3)).setImageResource(R.drawable.letter18);

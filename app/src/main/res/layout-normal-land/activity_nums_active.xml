@@ -143,4 +143,13 @@
         android:background="@drawable/next_button"
         android:id="@+id/button6" />
 
+    <Button
+        android:layout_width="51dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="13dp"
+        android:id="@+id/nums_a_back"
+        android:background="@drawable/alph_s_back"
+        android:layout_height="30dp"
+        android:layout_marginLeft="13dp" />
+
 </RelativeLayout>

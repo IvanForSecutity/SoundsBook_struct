@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 
 /**
@@ -76,6 +77,8 @@ public class Nums_slider_fragment extends Fragment {
                 startActivity(new Intent(ctx, Nums_active.class).putExtra("lvl_nums", number ));
             }
         });
+        V.findViewById(v).startAnimation(AnimationUtils.loadAnimation(getActivity(),
+                R.anim.dzhiga_driga));
     }
     void setButtons(int number,View v)
     {

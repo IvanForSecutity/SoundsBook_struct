@@ -2,6 +2,7 @@ package com.stepsotf.soundsbook_struct;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Picture;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -44,6 +45,13 @@ public class Nums_active extends Activity {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         getWindow().getDecorView().setSystemUiVisibility(uiOptions);
         SetVisiblePics();
+
+        findViewById(R.id.nums_a_back).setOnClickListener(new View.OnClickListener() {//go to slider when press back
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         voice_handler = new Handler() {
             public void handleMessage(android.os.Message msg) {
@@ -127,43 +135,46 @@ public class Nums_active extends Activity {
     }
     public void GoNextLvl_nums(View view)//its for button on xml
     {
-        (MediaPlayer.create(Nums_active.this,R.raw.click)).start();
-        Log.d("ass","as");
-        startActivity(new Intent(Nums_active.this,Nums_active.class).putExtra("lvl_nums",NUMS_LVL_NUM+1));
-        finish();
+        if(NUMS_LVL_NUM>8)finish();
+        else {
+            (MediaPlayer.create(Nums_active.this, R.raw.click)).start();
+            finish();
+            startActivity(new Intent(Nums_active.this, Nums_active.class).putExtra("lvl_nums", NUMS_LVL_NUM + 1));
+        }
     }
     void SetVisiblePics()
     {
         for (ImageView[] asd: pics) {
             for(ImageView as:asd){as.setVisibility(View.INVISIBLE);}
         }
+        int[] Images = getRandomPics(NUMS_LVL_NUM);
         switch (NUMS_LVL_NUM)
         {
             case 1:
-                pics[1][1].setImageResource(R.drawable.arbuz3);
+                pics[1][1].setImageResource(Images[0]);
                 pics[1][1].setVisibility(View.VISIBLE);
                 break;
             case 2:
-                pics[1][0].setImageResource(R.drawable.arbuz3);
-                pics[1][2].setImageResource(R.drawable.arbuz3);
+                pics[1][0].setImageResource(Images[0]);
+                pics[1][2].setImageResource(Images[1]);
                 
                 pics[1][0].setVisibility(View.VISIBLE);
                 pics[1][2].setVisibility(View.VISIBLE);
                 break;
             case 3:
-                pics[1][0].setImageResource(R.drawable.arbuz3);
-                pics[1][1].setImageResource(R.drawable.arbuz3);
-                pics[1][2].setImageResource(R.drawable.arbuz3);
+                pics[1][0].setImageResource(Images[0]);
+                pics[1][1].setImageResource(Images[1]);
+                pics[1][2].setImageResource(Images[2]);
                 
                 pics[1][0].setVisibility(View.VISIBLE);
                 pics[1][1].setVisibility(View.VISIBLE);
                 pics[1][2].setVisibility(View.VISIBLE);
                 break;
             case 4:
-                pics[0][1].setImageResource(R.drawable.arbuz3);
-                pics[1][2].setImageResource(R.drawable.arbuz3);
-                pics[1][0].setImageResource(R.drawable.arbuz3);
-                pics[2][1].setImageResource(R.drawable.arbuz3);
+                pics[0][1].setImageResource(Images[0]);
+                pics[1][2].setImageResource(Images[1]);
+                pics[1][0].setImageResource(Images[2]);
+                pics[2][1].setImageResource(Images[3]);
                 
                 pics[0][1].setVisibility(View.VISIBLE);
                 pics[1][2].setVisibility(View.VISIBLE);
@@ -171,11 +182,11 @@ public class Nums_active extends Activity {
                 pics[2][1].setVisibility(View.VISIBLE);
                 break;
             case 5:
-                pics[0][1].setImageResource(R.drawable.arbuz3);
-                pics[1][2].setImageResource(R.drawable.arbuz3);
-                pics[1][0].setImageResource(R.drawable.arbuz3);
-                pics[2][1].setImageResource(R.drawable.arbuz3);
-                pics[1][1].setImageResource(R.drawable.arbuz3);
+                pics[0][1].setImageResource(Images[0]);
+                pics[1][2].setImageResource(Images[1]);
+                pics[1][0].setImageResource(Images[2]);
+                pics[2][1].setImageResource(Images[3]);
+                pics[1][1].setImageResource(Images[4]);
                 
                 pics[0][1].setVisibility(View.VISIBLE);
                 pics[1][2].setVisibility(View.VISIBLE);
@@ -184,12 +195,12 @@ public class Nums_active extends Activity {
                 pics[1][1].setVisibility(View.VISIBLE);
                 break;
             case 6:
-                pics[0][0].setImageResource(R.drawable.arbuz3);
-                pics[0][2].setImageResource(R.drawable.arbuz3);
-                pics[1][0].setImageResource(R.drawable.arbuz3);
-                pics[1][2].setImageResource(R.drawable.arbuz3);
-                pics[2][0].setImageResource(R.drawable.arbuz3);
-                pics[2][2].setImageResource(R.drawable.arbuz3);
+                pics[0][0].setImageResource(Images[0]);
+                pics[0][2].setImageResource(Images[1]);
+                pics[1][0].setImageResource(Images[2]);
+                pics[1][2].setImageResource(Images[3]);
+                pics[2][0].setImageResource(Images[4]);
+                pics[2][2].setImageResource(Images[5]);
                 
                 pics[0][0].setVisibility(View.VISIBLE);
                 pics[0][2].setVisibility(View.VISIBLE);
@@ -199,13 +210,13 @@ public class Nums_active extends Activity {
                 pics[2][2].setVisibility(View.VISIBLE);
                 break;
             case 7:
-                pics[0][0].setImageResource(R.drawable.arbuz3);
-                pics[0][2].setImageResource(R.drawable.arbuz3);
-                pics[1][0].setImageResource(R.drawable.arbuz3);
-                pics[1][1].setImageResource(R.drawable.arbuz3);
-                pics[1][2].setImageResource(R.drawable.arbuz3);
-                pics[2][0].setImageResource(R.drawable.arbuz3);
-                pics[2][2].setImageResource(R.drawable.arbuz3);
+                pics[0][0].setImageResource(Images[0]);
+                pics[0][2].setImageResource(Images[1]);
+                pics[1][0].setImageResource(Images[2]);
+                pics[1][1].setImageResource(Images[3]);
+                pics[1][2].setImageResource(Images[4]);
+                pics[2][0].setImageResource(Images[5]);
+                pics[2][2].setImageResource(Images[6]);
                 
                 pics[0][0].setVisibility(View.VISIBLE);
                 pics[0][2].setVisibility(View.VISIBLE);
@@ -216,14 +227,14 @@ public class Nums_active extends Activity {
                 pics[2][2].setVisibility(View.VISIBLE);
                 break;
             case 8:
-                pics[0][0].setImageResource(R.drawable.arbuz3);
-                pics[0][1].setImageResource(R.drawable.arbuz3);
-                pics[0][2].setImageResource(R.drawable.arbuz3);
-                pics[1][0].setImageResource(R.drawable.arbuz3);
-                pics[1][2].setImageResource(R.drawable.arbuz3);
-                pics[2][0].setImageResource(R.drawable.arbuz3);
-                pics[2][1].setImageResource(R.drawable.arbuz3);
-                pics[2][2].setImageResource(R.drawable.arbuz3);
+                pics[0][0].setImageResource(Images[0]);
+                pics[0][1].setImageResource(Images[1]);
+                pics[0][2].setImageResource(Images[2]);
+                pics[1][0].setImageResource(Images[3]);
+                pics[1][2].setImageResource(Images[4]);
+                pics[2][0].setImageResource(Images[5]);
+                pics[2][1].setImageResource(Images[6]);
+                pics[2][2].setImageResource(Images[7]);
                 
                 pics[0][0].setVisibility(View.VISIBLE);
                 pics[0][1].setVisibility(View.VISIBLE);
@@ -235,15 +246,15 @@ public class Nums_active extends Activity {
                 pics[2][2].setVisibility(View.VISIBLE);
                 break;
             case 9:
-                pics[0][0].setImageResource(R.drawable.arbuz3);
-                pics[0][1].setImageResource(R.drawable.arbuz3);
-                pics[0][2].setImageResource(R.drawable.arbuz3);
-                pics[1][0].setImageResource(R.drawable.arbuz3);
-                pics[1][1].setImageResource(R.drawable.arbuz3);
-                pics[1][2].setImageResource(R.drawable.arbuz3);
-                pics[2][0].setImageResource(R.drawable.arbuz3);
-                pics[2][1].setImageResource(R.drawable.arbuz3);
-                pics[2][2].setImageResource(R.drawable.arbuz3);
+                pics[0][0].setImageResource(Images[0]);
+                pics[0][1].setImageResource(Images[1]);
+                pics[0][2].setImageResource(Images[2]);
+                pics[1][0].setImageResource(Images[3]);
+                pics[1][1].setImageResource(Images[4]);
+                pics[1][2].setImageResource(Images[5]);
+                pics[2][0].setImageResource(Images[6]);
+                pics[2][1].setImageResource(Images[7]);
+                pics[2][2].setImageResource(Images[8]);
                 
                 pics[0][0].setVisibility(View.VISIBLE);
                 pics[0][1].setVisibility(View.VISIBLE);
@@ -256,5 +267,15 @@ public class Nums_active extends Activity {
                 pics[2][2].setVisibility(View.VISIBLE);
                 break;
         }
+    }
+
+    int [] getRandomPics(int size)
+    {
+        int []pics=new int[size];
+        int[] Pictures={R.drawable.babochka,R.drawable.arbuz,R.drawable.caplya,R.drawable.chashka,R.drawable.chainik, R.drawable.dom, R.drawable.elka, R.drawable.eskimo, R.drawable.ezh, R.drawable.fonar, R.drawable.grib, R.drawable.halat, R.drawable.igla, R.drawable.iod, R.drawable.kit, R.drawable.lozhka, R.drawable.nosorog, R.drawable.ochki, R.drawable.plyazh, R.drawable.pugovica, R.drawable.rak, R.drawable.samolet, R.drawable.shapka, R.drawable.shar, R.drawable.shuka, R.drawable.tarelka, R.drawable.utka, R.drawable.varezhki, R.drawable.yabloko, R.drawable.zhuk, R.drawable.zmeya, R.drawable.zont};
+        Random r = new Random();
+        for(int i=0;i<size;i++)
+            pics[i]= Pictures[r.nextInt(32)];
+        return pics;
     }
 }

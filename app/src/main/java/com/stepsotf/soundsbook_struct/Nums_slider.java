@@ -44,11 +44,14 @@ public class Nums_slider extends FragmentActivity {
                 if(position==0){
                     findViewById(R.id.alph_s_prev).setPressed(true);
                     findViewById(R.id.alph_s_next).setPressed(false);
+                    Log.d("SLIDER","0");
                 }
                 if(position==1)
                 {
                     findViewById(R.id.alph_s_prev).setPressed(false);
                     findViewById(R.id.alph_s_next).setPressed(true);
+                    Log.d("SLIDER","1");
+
                 }
                 invalidateOptionsMenu();
             }
@@ -85,6 +88,7 @@ public class Nums_slider extends FragmentActivity {
     protected void onPause() {
         super.onPause();
         //SaveAll();
+        Log.d("SLIDER","pause");
         BackgroundSoundService.pause();
     }
 
@@ -92,6 +96,9 @@ public class Nums_slider extends FragmentActivity {
     protected void onResume() {
         super.onResume();
         //SaveAll();
+        Log.d("SLIDER","resume");
+            findViewById(R.id.alph_s_prev).setPressed(true);
+            findViewById(R.id.alph_s_next).setPressed(false);
         BackgroundSoundService.start(this, R.raw.wordapp);
     }
 }

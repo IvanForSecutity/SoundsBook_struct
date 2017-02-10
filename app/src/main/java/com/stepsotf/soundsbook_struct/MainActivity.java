@@ -2,6 +2,7 @@ package com.stepsotf.soundsbook_struct;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,8 @@ import android.view.View;
 public class MainActivity extends Activity {
 
     public static int uiOptions;
+    public static SharedPreferences SavedData;
+    private String SAVE_TAG="saved data";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +30,21 @@ public class MainActivity extends Activity {
         Log.d("some","go");
         Intent intent = new Intent(MainActivity.this,Menu.class);
         startActivity(intent);
-        finish();
+       // finish();
+    }
+
+    private void SAVE()
+    {
+        SavedData = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor ed = SavedData.edit();
+        ed.putString(SAVE_TAG, "something to save");
+        ed.commit();
+    }
+    private void LOAD()
+    {
+        SavedData = getPreferences(MODE_PRIVATE);
+        String savedText = SavedData.getString(SAVE_TAG, "");
+        //do something with this info
     }
     @Override
     protected void onPause() {
