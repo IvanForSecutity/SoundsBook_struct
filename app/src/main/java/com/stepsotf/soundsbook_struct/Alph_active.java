@@ -500,6 +500,7 @@ public class Alph_active extends Activity {
         else {
             (MediaPlayer.create(Alph_active.this, R.raw.click)).start();
             finish();
+            System.gc();//TODO Check this shit
             startActivity(new Intent(Alph_active.this, Alph_active.class).putExtra("lvl", ALP_LVL_NUM + 1));
         }
     }

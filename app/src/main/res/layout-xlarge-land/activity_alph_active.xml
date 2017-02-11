@@ -1,6 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#fffd51"
+    android:id="@+id/activity_alph_active">
 
-</LinearLayout>
+    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/alph_pic2"
+        android:src="@drawable/arbuz3"
+        android:layout_width="240dp"
+        android:layout_height="240dp">
+    </ImageView>
+
+    <Button
+        android:layout_width="88dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:onClick="GoNextLvl"
+        android:background="@drawable/next_button"
+        android:id="@+id/button6" />
+
+    <ImageView
+        android:id="@+id/alph_pic3"
+        android:src="@drawable/arbuz1"
+        android:layout_width="240dp"
+        android:layout_height="240dp">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/alph_pic1"
+        android:src="@drawable/arbuz2"
+        android:layout_width="240dp"
+        android:layout_height="240dp">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/alph_pic4"
+        android:src="@drawable/grib1"
+        android:layout_width="240dp"
+        android:layout_height="240dp">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/alph_pic_let"
+        android:src="@drawable/letter1"
+        android:background="@drawable/form_bg"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:scaleType="fitCenter"
+        android:padding="40dp">
+    </ImageView>
+    <ImageView
+        android:id="@+id/alph_pic_micro"
+        android:src="@drawable/microphone"
+        android:layout_width="190dp"
+        android:layout_height="284dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:scaleType="fitCenter">
+    </ImageView>
+    <Button
+        android:layout_width="102dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="26dp"
+        android:id="@+id/alph_a_back"
+        android:background="@drawable/alph_s_back"
+        android:layout_height="60dp"
+        android:layout_marginLeft="26dp" />
+
+</RelativeLayout>
