@@ -53,6 +53,9 @@
         <activity
             android:name=".Next_Lvl_Stub"
             android:screenOrientation="landscape" />
+        <activity
+            android:name=".Testing"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>

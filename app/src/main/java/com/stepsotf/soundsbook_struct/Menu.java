@@ -22,7 +22,6 @@ public class Menu extends Activity {
         Log.d("some","alph");
         Intent alph_intent = new Intent(Menu.this,Alph_slider.class);
         startActivity(alph_intent);
-       // finish();
         }
     public void goto_read(View view)
     {
@@ -33,6 +32,8 @@ public class Menu extends Activity {
     {
         (MediaPlayer.create(Menu.this,R.raw.click)).start();
         Log.d("some","test");
+        Intent test_intent = new Intent(Menu.this,Testing.class);
+        startActivity(test_intent);
     }
     public void goto_count(View view)
     {
@@ -40,20 +41,17 @@ public class Menu extends Activity {
         Log.d("some","count");
         Intent nums_intent = new Intent(Menu.this,Nums_slider.class);
         startActivity(nums_intent);
-        //finish();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        //SaveAll();
         BackgroundSoundService.pause();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        //SaveAll();
         BackgroundSoundService.start(this, R.raw.wordapp);
     }
 }

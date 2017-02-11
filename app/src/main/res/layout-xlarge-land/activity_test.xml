@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fdff51">
+
+
+    <ImageView
+        android:layout_width="274dp"
+        android:layout_height="338dp"
+        android:src="@drawable/balloon"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="88dp"
+        android:id="@+id/baloon" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/baloon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="98dp"
+        android:id="@+id/Counter"
+        android:textColor="@android:color/background_light"
+        android:textSize="36sp" />
+    <Button
+        android:layout_width="88dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/next_button"
+        android:id="@+id/gonext_test" />
+    <Button
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginRight="292dp"
+        android:layout_marginEnd="292dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/pause"
+        android:id="@+id/pause_test" />
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="26dp"
+        android:id="@+id/back_test"
+        android:background="@drawable/alph_s_back"
+        android:layout_height="60dp"
+        android:layout_marginLeft="26dp"
+        android:layout_width="102dp" />
+
+    <ImageView
+        android:layout_width="194dp"
+        android:layout_height="154dp"
+        android:src="@drawable/cloud_left"
+        android:layout_marginLeft="82dp"
+        android:layout_marginTop="402dp"
+        android:layout_marginStart="82dp"
+        android:id="@+id/cloud1" />
+
+   
+
+    <ImageView
+        android:layout_width="194dp"
+        android:layout_height="154dp"
+        android:src="@drawable/cloud_left"
+        android:layout_marginLeft="219dp"
+        android:layout_marginTop="226dp"
+        android:layout_marginStart="219dp"
+        android:id="@+id/cloud2" />
+    <ImageView
+        android:layout_width="194dp"
+        android:layout_height="154dp"
+        android:src="@drawable/cloud_left"
+        android:layout_marginLeft="380dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginStart="380dp"
+        android:id="@+id/cloud3" />
+
+    <ImageView
+        android:layout_width="194dp"
+        android:layout_height="154dp"
+        android:src="@drawable/cloud_right"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="82dp"
+        android:layout_marginTop="402dp"
+        android:layout_marginEnd="82dp"
+        android:id="@+id/cloud4" />
+    <ImageView
+        android:layout_width="194dp"
+        android:layout_height="154dp"
+        android:src="@drawable/cloud_right"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="219dp"
+        android:layout_marginTop="226dp"
+        android:layout_marginEnd="219dp"
+        android:id="@+id/cloud5" />
+    <ImageView
+        android:layout_width="194dp"
+        android:layout_height="154dp"
+        android:src="@drawable/cloud_right"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="380dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="380dp"
+        android:id="@+id/cloud6" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cloud1"
+        android:layout_alignStart="@id/cloud1"
+        android:layout_alignLeft="@id/cloud1"
+        android:id="@+id/textView1"
+        android:layout_alignRight="@+id/cloud1"
+        android:layout_alignEnd="@+id/cloud1"
+        android:gravity="center_horizontal"
+        android:textSize="36sp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="normal|bold" />
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cloud2"
+        android:layout_alignStart="@id/cloud2"
+        android:layout_alignLeft="@id/cloud2"
+        android:id="@+id/textView2"
+        android:layout_alignRight="@+id/cloud2"
+        android:layout_alignEnd="@+id/cloud2"
+        android:gravity="center_horizontal"
+        android:textSize="36sp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="normal|bold" />
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cloud3"
+        android:layout_alignStart="@id/cloud3"
+        android:layout_alignLeft="@id/cloud3"
+        android:id="@+id/textView3"
+        android:layout_alignRight="@+id/cloud3"
+        android:layout_alignEnd="@+id/cloud3"
+        android:gravity="center_horizontal"
+        android:textSize="36sp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="normal|bold" />
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cloud4"
+        android:layout_alignStart="@id/cloud4"
+        android:layout_alignLeft="@id/cloud4"
+        android:id="@+id/textView4"
+        android:layout_alignRight="@+id/cloud4"
+        android:layout_alignEnd="@+id/cloud4"
+        android:gravity="center_horizontal"
+        android:textSize="36sp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="normal|bold" />
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cloud5"
+        android:layout_alignStart="@id/cloud5"
+        android:layout_alignLeft="@id/cloud5"
+        android:id="@+id/textView5"
+        android:layout_alignRight="@+id/cloud5"
+        android:layout_alignEnd="@+id/cloud5"
+        android:gravity="center_horizontal"
+        android:textSize="36sp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="normal|bold" />
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cloud6"
+        android:layout_alignStart="@id/cloud6"
+        android:layout_alignLeft="@id/cloud6"
+        android:id="@+id/textView6"
+        android:layout_alignRight="@+id/cloud6"
+        android:layout_alignEnd="@+id/cloud6"
+        android:gravity="center_horizontal"
+        android:textSize="36sp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="normal|bold" />
+
+
+</RelativeLayout>

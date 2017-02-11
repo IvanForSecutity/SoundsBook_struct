@@ -26,10 +26,11 @@ public class Next_Lvl_Stub extends Activity {
                 int lvl = getIntent().getIntExtra("lvl",1);
                 int lvl_nums = getIntent().getIntExtra("lvl_nums",0);
                 Log.d("sda",""+lvl);
+                finish();
                 if(lvl_nums!=0)
                 startActivity(new Intent(Next_Lvl_Stub.this,Nums_active.class).putExtra("lvl_nums",lvl_nums));
                 else startActivity(new Intent(Next_Lvl_Stub.this,Alph_active.class).putExtra("lvl",lvl));
-                finish();
+
             }
         });
     }
